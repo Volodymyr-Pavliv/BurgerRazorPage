@@ -1,0 +1,60 @@
+﻿@page
+@model BurgerRazorPage.Pages.CreateBurgerModel
+@{
+}
+
+<div class="CreateText text-center">
+    <div>
+        <h1 class="display-4 text-black">Check out our great selection of Burgers</h1>
+        <h2>Choose one, or try our Burger Builder! Then Order and Done!</h2>
+        <h2>No need to give any of your details</h2>
+        <h2>We already know everything!</h2>
+        <p class="smallText"><i>Only one burger per order</i></p>
+    </div>
+
+  
+
+    <div class="">
+        <div class="row">
+            <div class="col-12 mb-5 mt-5">
+                <div class="w-100 row makeYourOwnDiv">
+                    <div class="col-4">
+                        <img src="~/images/CreateYourBurger.jpg" style="width:100%">
+                    </div>
+                    <div class="col-8" style="align-items:center;">
+                        <div class="makeYourOwnText"> 
+                            <h3 style=" ">Create your own burger</h3>
+                            <p style=" ">Make your own burger with our BurgerCreator</p>
+                            <a class="btn create-button" style="position:center;" asp-area="" asp-page="Forms/CustomBurger">Try Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-5 align-content-center" style="font-size:20px; font-weight:500;">
+                Order from the list of our existing burgers
+            </div>
+            @foreach (var burger in Model.fakeBurgerDB)
+            {
+                var photoPath = "~/images/BurgerPhotoes/" + (burger.ImageTitle + ".png");
+
+
+                <div class="col-4 mb-5">
+
+                    
+                    <a class="burger-img" style="color:black;" asp-area="" asp-page="Checkout/Checkout" 
+                    asp-route-BurgerName="@burger.BurgerName" asp-route-ImageTitle="@burger.ImageTitle"
+                   asp-route-BurgerPrice="@burger.FinalPrice"><img src="@photoPath" class="w-100" asp-append-version="true" />Try now</a>
+                    <br />
+                </div>
+            }
+
+        </div>
+
+    </div>
+    
+
+
+</div>
+
+
+

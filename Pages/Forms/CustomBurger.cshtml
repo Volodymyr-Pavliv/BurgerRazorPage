@@ -1,0 +1,36 @@
+﻿@page
+@model BurgerRazorPage.Pages.Forms.CustomBurgerModel
+@{
+}
+
+<h1 class="text-center">Create your own Burger</h1>
+<div class="container">
+        
+    <form method="post" class="mx-auto mt-5 mb-5 px-5 pt-5 pb-5 rounded-5 bg-light col-4">
+        <input type="text" asp-for="Burger.BurgerName" placeholder="Name your burger" />
+        <br />
+        <input type="checkbox" asp-for="Burger.Tomato" placeholder="Tomato" />Tomato Sauce
+        <br />
+        <input type="checkbox" asp-for="Burger.Cheese" placeholder="Cheese" />Cheese
+        <br />
+        <input type="checkbox" asp-for="Burger.Beef" placeholder="Beef" />Beef
+        <br />
+        <input type="checkbox" asp-for="Burger.Chicken" placeholder="Chicken" />Chicken
+        <br />
+        <input type="checkbox" asp-for="Burger.Fish" placeholder="Fish" />Fish
+        <br />
+        <input type="checkbox" asp-for="Burger.Ketchup" placeholder="Ketchup" />Ketchup
+        <br />
+        <input type="checkbox" asp-for="Burger.Mayonnaise" placeholder="Mayonnaise" />Mayonnaise
+        <br />
+        <input type="checkbox" asp-for="Burger.Lettuce" placeholder="Lettuce" />Lettuce
+        <br />
+        <input type="checkbox" asp-for="Burger.Bacon" placeholder="Bacon" />Bacon
+        <br />
+        <input type="checkbox" asp-for="Burger.Sauce" placeholder="Sauce" />Sauce
+        <br />
+
+        <button class="create-button mt-3"  type="submit">Order My Burger</button>
+
+    </form>
+</div>

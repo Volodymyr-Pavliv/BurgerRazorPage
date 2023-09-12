@@ -1,0 +1,23 @@
+﻿@page
+@model BurgerRazorPage.Pages.Checkout.CheckoutModel
+@{
+}
+
+<h1 class="text-center mb-5" style="color:white">Your Order</h1>
+@{
+    var imagePath = "~/images/BurgerPhotoes/" + (Model.ImageTitle + ".png");
+
+}
+<div class="align-content-center" style="font-size:20px; font-weight:500; color:white">
+    <div>
+        <img class="background-image1" src="~/images/bg-image.jpg" />
+    </div>
+    <div class=" col-3 mx-auto mb-5 text-center">
+        <img src=@imagePath class="w-100 mb-3" asp-append-version="true" />
+        <p>Your order for the @Model.BurgerName is ready!</p>
+        <p>Total price for your order is: @Model.BurgerPrice$</p>
+        <br />
+        <a class="btn alert-primary mx-auto " asp-area="" asp-page="/ThankYou/ThankYou">Confirm Order</a>
+
+    </div>
+</div>
